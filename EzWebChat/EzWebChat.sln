@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzWebChat", "EzWebChat\EzWebChat.csproj", "{1DC8DC9A-1FF9-4E48-8C9F-07C5E7D2A6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatEngine", "ChatEngine\ChatEngine.csproj", "{42919E16-10B9-49D2-93BA-CDE1750EEFC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DC8DC9A-1FF9-4E48-8C9F-07C5E7D2A6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC8DC9A-1FF9-4E48-8C9F-07C5E7D2A6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC8DC9A-1FF9-4E48-8C9F-07C5E7D2A6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC8DC9A-1FF9-4E48-8C9F-07C5E7D2A6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42919E16-10B9-49D2-93BA-CDE1750EEFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42919E16-10B9-49D2-93BA-CDE1750EEFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42919E16-10B9-49D2-93BA-CDE1750EEFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42919E16-10B9-49D2-93BA-CDE1750EEFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EDC96CF-7C03-42EE-9F66-D0C80A4695A6}
+	EndGlobalSection
+EndGlobal
