@@ -5,11 +5,11 @@ using ChatEngine.Service;
 
 namespace EzWebChat
 {
-    public partial class Form1 : Form
+    public partial class RegistrationForm : Form
     {
         private RequestService requestService;
 
-        public Form1()
+        public RegistrationForm()
         {
             InitializeComponent();
             requestService = new RequestService();
@@ -18,12 +18,15 @@ namespace EzWebChat
         private void button1_Click(object sender, EventArgs e)
         {
             //Пример того, что тебе надо сделать:
+
+            string passwordHash = CryptService.GetMD5Hash("ISuckDicksPassword");
+
             RegistrationRequest req = new RegistrationRequest()
             {
                 FirstName = "Egor",
                 LastName = "kalmikov",
                 UserName = "Ejoktank",
-                PassworHash = "dd848732fe4428c201390eb429435ce3",
+                PassworHash = passwordHash, //"dd848732fe4428c201390eb429435ce3"
                 CreateDate = new DateTime(1999,8,23, 4, 14 , 22)
             };
 

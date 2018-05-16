@@ -1,6 +1,6 @@
 ﻿namespace EzWebChat
 {
-    partial class Form1
+    partial class RegistrationForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

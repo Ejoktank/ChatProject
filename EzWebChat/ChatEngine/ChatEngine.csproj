@@ -43,6 +43,7 @@
     <Compile Include="Model\RegistrationInfo.cs" />
     <Compile Include="Model\RegistrationRequest.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Service\CryptService.cs" />
     <Compile Include="Service\RequestService.cs" />
   </ItemGroup>
   <ItemGroup>
