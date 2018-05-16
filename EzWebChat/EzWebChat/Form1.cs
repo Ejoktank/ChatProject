@@ -16,5 +16,13 @@ namespace EzWebChat
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+                label1.Text = "Error";
+                //MessageBox.Show("Error","Wrong name");
+            button1.Text = textBox1.Text;
+        }
     }
 }
