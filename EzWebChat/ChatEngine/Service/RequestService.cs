@@ -1,24 +1,22 @@
 ﻿using ChatEngine.Model;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using System.Net;
+using System.Text;
+using System;
 
 namespace ChatEngine.Service
 {
-    public class RequestService
+    public class RequestService : BaseService
     {
-        public bool Registration(RegistrationRequest request)
+
+        public RegistrationInfo Registration(RegistrationRequest request)
         {
-            DataContractJsonSerializer json = new DataContractJsonSerializer(typeof(RegistrationRequest));
             try
             {
-                using (FileStream fs = new FileStream("test.json", FileMode.OpenOrCreate))
-                {
-                    json.WriteObject(fs, request);
-                }
-
-                return true;
+                return (RegistrationInfo)ServerRequest<RegistrationInfo>("Register", request); ;
             }
-            catch { return false; }
+            catch(Exception ex) { return new RegistrationInfo() { IsRegistred = false, ErrorReason = "Request error" }; }
         }
     }
 }

@@ -27,13 +27,14 @@ namespace EzWebChat
                 LastName = "kalmikov",
                 UserName = "Ejoktank",
                 PassworHash = passwordHash, //"dd848732fe4428c201390eb429435ce3"
-                CreateDate = new DateTime(1999,8,23, 4, 14 , 22)
+                CreateDate = new DateTime(1999, 8, 23, 4, 14, 22)
             };
 
-            if (requestService.Registration(req))
+            var response = requestService.Registration(req);
+            if (response.IsRegistred)
                 MessageBox.Show("Registration", "Success");
             else
-                MessageBox.Show("Error");
+                MessageBox.Show(response.ErrorReason);
 
 
             //Здесь должны быть реальные данные с формы
