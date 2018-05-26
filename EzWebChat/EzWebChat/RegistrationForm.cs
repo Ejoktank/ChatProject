@@ -27,12 +27,20 @@ namespace EzWebChat
                 LastName = "kalmikov",
                 UserName = "Ejoktank",
                 PassworHash = passwordHash, //"dd848732fe4428c201390eb429435ce3"
+<<<<<<< Updated upstream
                 CreateDate = new DateTime(1999, 8, 23, 4, 14, 22)
             };
 
             var response = requestService.Registration(req);
             if (response.IsRegistred)
                 MessageBox.Show("Registration", "Success");
+=======
+                CreateDate = DateTime.Now
+            };
+
+            if (requestService.Registration(req))
+                MessageBox.Show("Success", "Registration");
+>>>>>>> Stashed changes
             else
                 MessageBox.Show(response.ErrorReason);
 
@@ -40,10 +48,35 @@ namespace EzWebChat
             //Здесь должны быть реальные данные с формы
             //TODO: Егор - это за тобой
 
-            if (textBox1.Text == "")
-                label1.Text = "Error";
-                //MessageBox.Show("Error","Wrong name");
-            button1.Text = textBox1.Text;
+            if (name.Text == "" || name.Text == "Имя" )
+                //label1.Text = "Error";
+                MessageBox.Show("Wrong name", "Error");
+                //button1.Text = name.Text;
+
+            if (surname.Text == "" || surname.Text == "Фамилия")
+            {
+                MessageBox.Show("Wrong surname", "Error");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
