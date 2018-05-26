@@ -30,7 +30,7 @@ namespace EzWebChat
                 CreateDate = new DateTime(1999, 8, 23, 4, 14, 22)
             };
 
-            var response = await requestService.Registration(req);
+            var response = requestService.Registration(req);
             if (response.IsRegistred)
                 MessageBox.Show("Registration", "Success");
             else
