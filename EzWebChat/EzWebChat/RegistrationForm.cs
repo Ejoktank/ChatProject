@@ -15,7 +15,7 @@ namespace EzWebChat
             requestService = new RequestService();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        async private void button1_Click(object sender, EventArgs e)
         {
             //Пример того, что тебе надо сделать:
 
@@ -27,20 +27,12 @@ namespace EzWebChat
                 LastName = "kalmikov",
                 UserName = "Ejoktank",
                 PassworHash = passwordHash, //"dd848732fe4428c201390eb429435ce3"
-<<<<<<< Updated upstream
                 CreateDate = new DateTime(1999, 8, 23, 4, 14, 22)
             };
 
-            var response = requestService.Registration(req);
+            var response = await requestService.Registration(req);
             if (response.IsRegistred)
                 MessageBox.Show("Registration", "Success");
-=======
-                CreateDate = DateTime.Now
-            };
-
-            if (requestService.Registration(req))
-                MessageBox.Show("Success", "Registration");
->>>>>>> Stashed changes
             else
                 MessageBox.Show(response.ErrorReason);
 

@@ -6,6 +6,7 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace ChatEngine.Service
 {
@@ -21,7 +22,7 @@ namespace ChatEngine.Service
         /// <param name="reqType">Тип запроса</param>
         /// <param name="Content">Контент</param>
         /// <returns></returns>
-        protected object ServerRequest<T>(string url, object Content)
+        async protected Task<object> ServerRequest<T>(string url, object Content)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://185.174.172.233:1234/" + url);
             httpWebRequest.ContentType = "application/json";
@@ -31,12 +32,12 @@ namespace ChatEngine.Service
             {
                     string output = JsonConvert.SerializeObject(Content);
 
-                    streamWriter.Write(output);
+                    await streamWriter.WriteAsync(output);
                     streamWriter.Flush();
                     streamWriter.Close();
             }
 
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var httpResponse = (HttpWebResponse)(await httpWebRequest.GetResponseAsync());
             object result;
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
